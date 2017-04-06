@@ -8,4 +8,6 @@ PGBOUNCER_CONFIG_INI=/etc/pgbouncer/pgbouncer.ini
 chown root:${PGBOUNCER_USER} ${PGBOUNCER_LOG}
 chmod -R 775 ${PGBOUNCER_LOG}
 
-exec pgbouncer -u ${PGBOUNCER_USER} $PGBOUNCER_CONFIG_INI
+echo "pgbouncer is running"
+
+exec pgbouncer -q -u ${PGBOUNCER_USER} ${PGBOUNCER_CONFIG_INI}
